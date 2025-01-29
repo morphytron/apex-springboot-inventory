@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface RecalledProductRepository extends JpaRepository<RecalledProduct, Integer> {}
+public interface RecalledProductRepository extends JpaRepository<RecalledProduct, Integer> {
+}

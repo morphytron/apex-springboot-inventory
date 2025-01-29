@@ -44,6 +44,18 @@ class ProductServiceTests {
     }
 
     @Test
+    void getsAllFilteredNonRecalledProducts() {
+        Collection<Product> products = productService.getAllProduct();
+
+        Assertions.assertEquals(2, products.size());
+
+        products.forEach(product -> {
+           Assertions.assertFalse(product.getName().equals("gum"));
+        });
+
+    }
+
+    @Test
     void shouldSaveProduct() {
         Product product = createTestProduct("product1", 1.2, 2);
 

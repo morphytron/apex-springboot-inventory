@@ -27,7 +27,7 @@ public class RecalledProductController {
     @GetMapping("/")
     ResponseEntity<Collection<RecalledProduct>> findRecallProducts() {
         Collection<RecalledProduct> allRecalledProducts = recalledProductService.getAllRecalledProducts();
-
         return ResponseEntity.ok(allRecalledProducts);
     }
+
 }

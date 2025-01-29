@@ -17,10 +17,11 @@ public class ProductFilter {
     }
 
     public List<Product> removeRecalledFrom(Collection<Product> allProduct) {
-        return allProduct.stream().filter(ProductFilter::filterByName).collect(Collectors.toList());
+        return allProduct.stream().filter(this::filterByName).collect(Collectors.toList());
     }
 
-    private static boolean filterByName(Product product) {
-        return true;
+    private boolean filterByName(Product product) {
+        return !this.recalledProducts.contains(product.getName());
+
     }
 }
